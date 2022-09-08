@@ -1,4 +1,7 @@
+import React from "react";
+
 const ExpenseItem = () => {
-  return <h2>Expense Items!</h2>;
+  return <h2>hi</h2>;
 };
+
 export default ExpenseItem;
