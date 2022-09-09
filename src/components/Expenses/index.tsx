@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './style.css';
+import Card from '../Card';
 import ExpenseItem from '../ExpenseItem';
 
 interface Expense {
@@ -16,11 +17,11 @@ interface ExpensesProps {
 
 const Expenses: React.FC<ExpensesProps> = props => {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       {props.expenses.map(expense => (
         <ExpenseItem key={expense.id} {...expense} />
       ))}
-    </div>
+    </Card>
   );
 };
 
