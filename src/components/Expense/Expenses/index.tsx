@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 
 import './style.css';
 import ExpensesFilter from '../../ExpensesFilter';
@@ -17,13 +17,19 @@ const Expenses: React.FC<ExpensesProps> = props => {
     setFilteredYear(value);
   };
 
+  const filteredExpense = useMemo(() => {
+    return props.expenses.filter(
+      expense => expense.date.getFullYear() === filteredYear,
+    );
+  }, [filteredYear, props.expenses]);
+
   return (
     <Card className="expenses">
       <ExpensesFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {props.expenses.map(expense => (
+      {filteredExpense.map(expense => (
         <ExpenseItem key={expense.id} {...expense} />
       ))}
     </Card>
