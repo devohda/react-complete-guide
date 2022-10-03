@@ -1,40 +1,42 @@
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
-interface useHttpProps {
-  requestConfig: {
-    url: RequestInfo | URL;
-    method?: string;
-    headers?: HeadersInit;
-    body?: BodyInit | null;
-  };
-  applyData: (data: Response) => void;
+type ApplyData = (data: Response) => void;
+
+interface RequestConfig {
+  url: RequestInfo | URL;
+  method?: string;
+  headers?: HeadersInit;
+  body?: BodyInit | null;
 }
 
-const useHttp = ({requestConfig, applyData}: useHttpProps) => {
+const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const sendRequest = async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const response = await fetch(requestConfig.url, {
-        method: requestConfig?.method || 'GET',
-        headers: requestConfig?.headers || {},
-        body: requestConfig?.body ? JSON.stringify(requestConfig.body) : null,
-      });
+  const sendRequest = useCallback(
+    async (requestConfig: RequestConfig, applyData: ApplyData) => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(requestConfig.url, {
+          method: requestConfig?.method || 'GET',
+          headers: requestConfig?.headers || {},
+          body: requestConfig?.body ? JSON.stringify(requestConfig.body) : null,
+        });
 
-      if (!response.ok) {
-        throw new Error('Request failed!');
+        if (!response.ok) {
+          throw new Error('Request failed!');
+        }
+
+        const data = await response.json();
+        applyData(data);
+      } catch (err: any) {
+        setError(err.message || 'Something went wrong!');
       }
-
-      const data = await response.json();
-      applyData(data);
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong!');
-    }
-    setIsLoading(false);
-  };
+      setIsLoading(false);
+    },
+    [],
+  );
 
   return {
     isLoading,
