@@ -1,10 +1,7 @@
 import Card from './Card';
-import useCounter from '../hooks/use-counter';
 
 const ForwardCounter = () => {
-  const counter = useCounter();
-
-  return <Card>{counter}</Card>;
+  return <Card>{1}</Card>;
 };
 
 export default ForwardCounter;
