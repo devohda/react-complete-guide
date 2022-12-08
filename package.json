@@ -3,7 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.16",
@@ -11,13 +22,14 @@
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
-    "eslint": "^7.11.0",
+    "eslint": "8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.7",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1",
-    "typescript": "^4.8.2"
+    "typescript": "^4.9.4"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -38,9 +50,14 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "husky": "^8.0.1",
-    "react-redux": "^8.0.4",
-    "redux": "^4.2.0"
-  }
+  "workspaces": [
+    "project1",
+    "project2",
+    "section15",
+    "section15-2",
+    "section16",
+    "section18",
+    "section18-2",
+    "section20"
+  ]
 }
