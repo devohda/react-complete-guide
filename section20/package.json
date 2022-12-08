@@ -9,6 +9,6 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "react-router": "^6.4.5"
+    "react-router-dom": "5"
   }
 }
