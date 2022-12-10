@@ -1,5 +1,4 @@
 import {FormEventHandler, useRef, useState} from 'react';
-import {Prompt} from 'react-router-dom';
 
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
@@ -37,12 +36,12 @@ const QuoteForm = (props: QuoteFormProps) => {
 
   return (
     <>
-      <Prompt
-        when={isEntering}
-        message={location =>
-          'Are you sure you want to leave? All your entered data will be lost!'
-        }
-      />
+      {/*<Prompt*/}
+      {/*  when={isEntering}*/}
+      {/*  message={location =>*/}
+      {/*    'Are you sure you want to leave? All your entered data will be lost!'*/}
+      {/*  }*/}
+      {/*/>*/}
       <Card>
         <form
           className={classes.form}

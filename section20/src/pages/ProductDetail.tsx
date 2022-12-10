@@ -1,11 +1,7 @@
 import {useParams} from 'react-router-dom';
 
-interface ProductDetailParams {
-  productId: string;
-}
-
 const ProductDetail = () => {
-  const params = useParams<ProductDetailParams>();
+  const params = useParams();
 
   return (
     <div>

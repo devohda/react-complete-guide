@@ -1,4 +1,4 @@
-import {useHistory, useLocation} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 
 import {sortQuotes} from '../../utils/sorting';
 import QuoteItem from './QuoteItem';
@@ -10,15 +10,20 @@ interface QuoteListProps {
 }
 
 const QuoteList = ({quotes}: QuoteListProps) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const isSortingAscending = queryParams.get('sort') === 'asc';
   const changeSortingHandler = () => {
-    history.replace({
-      pathname: location.pathname,
-      search: `?sort=${isSortingAscending ? 'desc' : 'asc'}`,
-    });
+    navigate(
+      {
+        pathname: location.pathname,
+        search: `?sort=${isSortingAscending ? 'desc' : 'asc'}`,
+      },
+      {
+        replace: true,
+      },
+    );
   };
 
   return (

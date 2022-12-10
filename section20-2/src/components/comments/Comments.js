@@ -34,9 +34,9 @@ const Comments = () => {
   let comments;
   if (status === 'pending') {
     comments = (
-      <p className="centered">
+      <div className="centered">
         <LoadingSpinner />
-      </p>
+      </div>
     );
   }
 

@@ -9,10 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "react-router-dom": "5"
-  },
-  "devDependencies": {
-    "@types/react-router-dom": "^5.3.3"
+    "react-router-dom": "^6.4.5"
   },
   "peerDependencies": {
     "react": "^18.2.0"
