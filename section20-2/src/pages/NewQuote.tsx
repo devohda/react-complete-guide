@@ -1,5 +1,5 @@
 const NewQuote = () => {
-  return <div>Main</div>;
+  return <h1>New quotes</h1>;
 };
 
 export default NewQuote;
