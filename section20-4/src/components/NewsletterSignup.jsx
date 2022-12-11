@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { useFetcher } from 'react-router-dom';
+import {useRef} from 'react';
+import {useFetcher} from 'react-router-dom';
 
 import classes from './NewsletterSignup.module.css';
 
@@ -13,8 +13,8 @@ function NewsletterSignup() {
     // could validate input here
     fetcher.submit(
       // better: use fetcher.Form instead
-      { email: enteredEmail },
-      { method: 'post', action: '/newsletter' }
+      {email: enteredEmail},
+      {method: 'post', action: '/newsletter'},
     );
   }
 

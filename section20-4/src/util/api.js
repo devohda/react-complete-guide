@@ -1,9 +1,9 @@
-import { sleep } from './sleep';
+import {sleep} from './sleep';
 
 export async function getPosts() {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
   if (!response.ok) {
-    throw new Response('Failed to fetch posts.', { status: 500 });
+    throw new Response('Failed to fetch posts.', {status: 500});
   }
   return response.json();
 }
@@ -12,7 +12,7 @@ export async function getSlowPosts() {
   await sleep(2000);
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
   if (!response.ok) {
-    throw new Response('Failed to fetch posts.', { status: 500 });
+    throw new Response('Failed to fetch posts.', {status: 500});
   }
   return response.json();
 }
@@ -28,7 +28,7 @@ export async function savePost(data) {
   };
 
   if (post.title.trim().length < 5 || post.body.trim().length < 10) {
-    return { isError: true, message: 'Invalid input data provided.' };
+    return {isError: true, message: 'Invalid input data provided.'};
   }
 
   const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -42,5 +42,4 @@ export async function savePost(data) {
   if (!response.ok) {
     throw response;
   }
-  
 }

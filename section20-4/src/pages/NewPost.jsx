@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import NewPostForm from '../components/NewPostForm';
-import { savePost } from '../util/api';
+import {savePost} from '../util/api';
 
 function NewPostPage() {
   const data = useActionData();
@@ -33,7 +33,7 @@ function NewPostPage() {
 
 export default NewPostPage;
 
-export async function action({ request }) {
+export async function action({request}) {
   const data = await request.formData();
 
   const validationError = await savePost(data);

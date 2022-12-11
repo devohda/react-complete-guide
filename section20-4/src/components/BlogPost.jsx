@@ -1,6 +1,6 @@
 import classes from './BlogPost.module.css';
 
-function BlogPost({ title, text }) {
+function BlogPost({title, text}) {
   return (
     <article className={classes.post}>
       <h1>{title}</h1>

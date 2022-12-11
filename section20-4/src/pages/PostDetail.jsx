@@ -1,8 +1,8 @@
-import { useLoaderData } from 'react-router-dom';
+import {useLoaderData} from 'react-router-dom';
 
 import BlogPost from '../components/BlogPost';
 import NewsletterSignup from '../components/NewsletterSignup';
-import { getPost } from '../util/api';
+import {getPost} from '../util/api';
 
 function PostDetailPage() {
   const postData = useLoaderData();
@@ -17,7 +17,7 @@ function PostDetailPage() {
 
 export default PostDetailPage;
 
-export function loader({ params }) {
+export function loader({params}) {
   const postId = params.id;
 
   return getPost(postId);
