@@ -11239,6 +11239,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"section7@workspace:section7":
+  version: 0.0.0-use.local
+  resolution: "section7@workspace:section7"
+  languageName: unknown
+  linkType: soft
+
 "select-hose@npm:^2.0.0":
   version: 2.0.0
   resolution: "select-hose@npm:2.0.0"
