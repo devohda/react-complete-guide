@@ -11239,6 +11239,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"section25@workspace:section25":
+  version: 0.0.0-use.local
+  resolution: "section25@workspace:section25"
+  dependencies:
+    react-router-dom: ^6.4.5
+  peerDependencies:
+    react: ^18.2.0
+  languageName: unknown
+  linkType: soft
+
 "section7@workspace:section7":
   version: 0.0.0-use.local
   resolution: "section7@workspace:section7"
